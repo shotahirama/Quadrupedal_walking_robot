@@ -1,3 +1,6 @@
+#ifndef __KRS2552_H__
+#define __KRS2552_H__
+
 #include "mbed.h"
 
 Serial pc(USBTX,USBRX);
@@ -69,3 +72,5 @@ int readID()
     int id = master.getc();
     return id & 31;
 }
+
+#endif

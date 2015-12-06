@@ -1,11 +1,11 @@
-#include "KRS2552.h"
+#include "motion.h"
+
+Motion robot;
 
 int main()
 {
-    KRS2552 servo;
-    servo.angle(1,0);
-    
-    while(1);
-    
+    while(1){
+        robot.walk();
+    }
     return 0;
 }

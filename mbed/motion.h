@@ -19,7 +19,7 @@ public:
         servo.angle(4,0);
         servo.angle(6,0);
         servo.angle(8,0);
-        wait(1);
+        wait_ms(500);
     }
 
     /**
@@ -28,46 +28,49 @@ public:
     */
     void walk() {
         motion1();
-        wait(1);
+        wait_ms(500);
         pos3(1);
-        wait(1);
+        wait_ms(500);
 
         motion2();
-        wait(1);
+        wait_ms(500);
         pos3(5);
-        wait(1);
+        wait_ms(500);
 
         motion3();
-        wait(1);
+        wait_ms(500);
         pos3(7);
-        wait(1);
+        wait_ms(500);
 
         motion4();
-        wait(1);
+        wait_ms(500);
         pos3(3);
-        wait(1);
+        wait_ms(500);
     }
 
+    
+    /**
+        - turn
+        - その場回転
+    */
+
     void turn() {
+
+        motion9();
+        wait_ms(100);
+
         motion5();
-        wait(1);
-        pos1(1);
-        wait(1);
+        wait_ms(100);
 
         motion6();
-        wait(1);
-        pos1(3);
-        wait(1);
+        wait_ms(100);
 
         motion7();
-        wait(1);
-        pos3(5);
-        wait(1);
+        wait_ms(100);
 
         motion8();
-        wait(1);
-        pos3(7);
-        wait(1);
+        wait_ms(100);
+
     }
 
     /**
@@ -79,22 +82,22 @@ public:
         pos2(3);
         pos2(5);
         pos2(7);
-        wait(1);
+        wait_ms(500);
         pos2(1);
         pos4(3);
         pos2(5);
         pos4(7);
-        wait(1);
+        wait_ms(500);
         pos2(1);
         pos2(3);
         pos2(5);
         pos2(7);
-        wait(1);
+        wait_ms(500);
         pos4(1);
         pos2(3);
         pos4(5);
         pos2(7);
-        wait(1);
+        wait_ms(500);
     }
 
 
@@ -212,31 +215,36 @@ private:
     }
 
     void motion5() {
-        widePos4(1);
-        widePos2(3);
-        widePos2(5);
-        widePos2(7);
+        pos4(1);
+        pos2(3);
+        pos4(5);
+        pos2(7);
     }
 
     void motion6() {
-        widePos1(1);
-        widePos4(3);
-        widePos2(5);
-        widePos2(7);
+        pos1(1);
+        pos2(3);
+        pos3(5);
+        pos2(7);
     }
 
     void motion7() {
-        widePos1(1);
-        widePos1(3);
-        widePos4(5);
-        widePos2(7);
+        pos1(1);
+        pos4(3);
+        pos3(5);
+        pos4(7);
     }
-
     void motion8() {
-        widePos1(1);
-        widePos1(3);
-        widePos3(5);
-        widePos4(7);
+        pos1(1);
+        pos1(3);
+        pos3(5);
+        pos3(7);
+    }
+    void motion9() {
+        pos2(1);
+        pos2(3);
+        pos2(5);
+        pos2(7);
     }
 
 

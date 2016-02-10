@@ -1,6 +1,9 @@
-#pragma once
+#ifndef __KRS2552_H__
+#define __KRS2552_H__
+
 #include "mbed.h"
 
+Serial pc(USBTX,USBRX);
 SerialHalfDuplex master(p9,p10);
 
 class KRS2552
@@ -11,6 +14,7 @@ public:
         master.baud(115200);
         master.format(8,Serial::Even,1);
     
+        pc.printf("init\r\n");
         wait(0.5);
     }
     
@@ -68,3 +72,5 @@ int readID()
     int id = master.getc();
     return id & 31;
 }
+
+#endif

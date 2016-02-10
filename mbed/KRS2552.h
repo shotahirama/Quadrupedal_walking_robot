@@ -3,7 +3,7 @@
 
 #include "mbed.h"
 
-Serial pc(USBTX,USBRX);
+//Serial pc(USBTX,USBRX);
 SerialHalfDuplex master(p9,p10);
 
 class KRS2552
@@ -14,7 +14,7 @@ public:
         master.baud(115200);
         master.format(8,Serial::Even,1);
     
-        pc.printf("init\r\n");
+        //pc.printf("init\r\n");
         wait(0.5);
     }
     
